@@ -1,0 +1,86 @@
+{
+  "sl2": {
+    "pure_tf": {
+      "root": "results/synthetic/prepretrain/sl2",
+      "mean_best_ppl": 21.825,
+      "lr": 0.005,
+      "checkpoints": [
+        "results/synthetic/prepretrain/sl2/checkpoints/pure_tf/seed0.pt",
+        "results/synthetic/prepretrain/sl2/checkpoints/pure_tf/seed1.pt",
+        "results/synthetic/prepretrain/sl2/checkpoints/pure_tf/seed2.pt"
+      ]
+    },
+    "4s4t_alternate": {
+      "root": "results/synthetic/prepretrain_lrswap/sl2",
+      "mean_best_ppl": 21.434,
+      "lr": 0.005,
+      "checkpoints": [
+        "results/synthetic/prepretrain_lrswap/sl2/checkpoints/4s4t_alternate/seed0.pt",
+        "results/synthetic/prepretrain_lrswap/sl2/checkpoints/4s4t_alternate/seed1.pt",
+        "results/synthetic/prepretrain_lrswap/sl2/checkpoints/4s4t_alternate/seed2.pt"
+      ]
+    },
+    "6s2t_start": {
+      "root": "results/synthetic/prepretrain_lrswap/sl2",
+      "mean_best_ppl": 23.46,
+      "lr": 0.0028483952601417555,
+      "checkpoints": [
+        "results/synthetic/prepretrain_lrswap/sl2/checkpoints/6s2t_start/seed0.pt",
+        "results/synthetic/prepretrain_lrswap/sl2/checkpoints/6s2t_start/seed1.pt",
+        "results/synthetic/prepretrain_lrswap/sl2/checkpoints/6s2t_start/seed2.pt"
+      ]
+    },
+    "pure_ssm": {
+      "root": "results/synthetic/prepretrain_lrswap/sl2",
+      "mean_best_ppl": 23.532,
+      "lr": 0.0028483952601417555,
+      "checkpoints": [
+        "results/synthetic/prepretrain_lrswap/sl2/checkpoints/pure_ssm/seed0.pt",
+        "results/synthetic/prepretrain_lrswap/sl2/checkpoints/pure_ssm/seed1.pt",
+        "results/synthetic/prepretrain_lrswap/sl2/checkpoints/pure_ssm/seed2.pt"
+      ]
+    }
+  },
+  "none": {
+    "pure_tf": {
+      "root": "results/synthetic/prepretrain_lrswap/none",
+      "mean_best_ppl": 21.907,
+      "lr": 0.005,
+      "checkpoints": [
+        "results/synthetic/prepretrain_lrswap/none/checkpoints/pure_tf/seed0.pt",
+        "results/synthetic/prepretrain_lrswap/none/checkpoints/pure_tf/seed1.pt",
+        "results/synthetic/prepretrain_lrswap/none/checkpoints/pure_tf/seed2.pt"
+      ]
+    },
+    "4s4t_alternate": {
+      "root": "results/synthetic/prepretrain/none",
+      "mean_best_ppl": 21.495,
+      "lr": 0.005,
+      "checkpoints": [
+        "results/synthetic/prepretrain/none/checkpoints/4s4t_alternate/seed0.pt",
+        "results/synthetic/prepretrain/none/checkpoints/4s4t_alternate/seed1.pt",
+        "results/synthetic/prepretrain/none/checkpoints/4s4t_alternate/seed2.pt"
+      ]
+    },
+    "6s2t_start": {
+      "root": "results/synthetic/prepretrain_lrswap/none",
+      "mean_best_ppl": 23.617,
+      "lr": 0.000924401740609853,
+      "checkpoints": [
+        "results/synthetic/prepretrain_lrswap/none/checkpoints/6s2t_start/seed0.pt",
+        "results/synthetic/prepretrain_lrswap/none/checkpoints/6s2t_start/seed1.pt",
+        "results/synthetic/prepretrain_lrswap/none/checkpoints/6s2t_start/seed2.pt"
+      ]
+    },
+    "pure_ssm": {
+      "root": "results/synthetic/prepretrain/none",
+      "mean_best_ppl": 23.339,
+      "lr": 0.0028483952601417555,
+      "checkpoints": [
+        "results/synthetic/prepretrain/none/checkpoints/pure_ssm/seed0.pt",
+        "results/synthetic/prepretrain/none/checkpoints/pure_ssm/seed1.pt",
+        "results/synthetic/prepretrain/none/checkpoints/pure_ssm/seed2.pt"
+      ]
+    }
+  }
+}

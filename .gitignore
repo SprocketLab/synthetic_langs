@@ -1,0 +1,7 @@
+__pycache__/
+results/
+figures/
+langs/sl-eng-d04/
+langs/fig/
+experiments/**/fig/
+wandb/

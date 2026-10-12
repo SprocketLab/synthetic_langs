@@ -1,0 +1,14 @@
+# torch 2.8.0 (CUDA 12.8) is installed separately; mamba_ssm and causal_conv1d are prebuilt wheels (see README).
+transformers==4.57.6
+accelerate==1.13.0
+numpy==1.26.4
+matplotlib==3.10.9
+einops==0.8.2
+datasets==4.8.5
+huggingface-hub==0.36.2
+tqdm==4.67.3
+pandas==3.0.3
+wandb==0.27.0
+mambapy==1.2.0
+packaging
+flash-linear-attention==0.5.2
