@@ -23,6 +23,7 @@ import paper_style as P
 _HERE = os.path.dirname(os.path.abspath(__file__))
 SYN = os.path.join(_HERE, "..", "..", "results", "synthetic")
 OUT = os.path.join(_HERE, "..", "..", "figures")
+os.makedirs(OUT, exist_ok=True)
 
 
 def runs(d, cfg):

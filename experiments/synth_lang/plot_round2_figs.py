@@ -23,6 +23,7 @@ import paper_style as P
 _HERE = os.path.dirname(os.path.abspath(__file__))
 SYN = os.path.join(_HERE, "..", "..", "results", "synthetic")
 OUT = os.path.join(_HERE, "..", "..", "figures")
+os.makedirs(OUT, exist_ok=True)
 OPEN = {**P.MARKER, "markerfacecolor": "white"}
 
 
@@ -165,11 +166,11 @@ def prepretrain():
     save(fig, "babylm_prepretrain")
 
 
-def epoch20(lrfix=False):
+def epoch20():
     """Slope chart: BabyLM PPL at epoch 20 (median over seeds) without and with SL2 pre-pretraining, with
-    Kendall's tau between the two rankings. lrfix reads prepretrain/{none,sl2}_lrfix instead of best_lr()."""
+    Kendall's tau between the two rankings."""
     from plot_rank_slope import spread
-    lo, hi = 21.0, (24.5 if lrfix else 24.0)
+    lo, hi = 22.0, 24.5
     f = lambda v: (v - lo) / (hi - lo)   # y in [0, 1]
     xl, xr = 0.0, 1.0
     fig, ax = plt.subplots(figsize=(P.ACL_COL, 2.55))
@@ -182,10 +183,7 @@ def epoch20(lrfix=False):
                 ax.text(x - 0.04, f(t), f"{t:g}", ha="right", va="center", fontsize=6.3, color="#555555")
     ends = []
     for c in PRE_ORDER:
-        if lrfix:
-            a, b = (np.array([r["val_ppls"][19] for r in runs(f"prepretrain/{i}_lrfix", c)]) for i in ("none", "sl2"))
-        else:
-            a, b = best_lr("none", c)[:, 19], best_lr("sl2", c)[:, 19]   # epoch 20
+        a, b = (np.array([r["val_ppls"][19] for r in runs(f"prepretrain/{i}", c)]) for i in ("none", "sl2"))   # epoch 20
         ya, yb = f(np.median(a)), f(np.median(b))
         ax.plot([xl, xr], [ya, yb], color=P.color(c), lw=2.0, zorder=2, solid_capstyle="round")
         ax.plot([xl, xr], [ya, yb], ls="none", color=P.color(c), zorder=3, **P.MARKER)
@@ -205,7 +203,7 @@ def epoch20(lrfix=False):
         ax.spines[sp].set_visible(False)
     ax.tick_params(axis="x", length=0, pad=4)
     ax.text(xl - 0.40, 0.5, "BabyLM PPL at epoch 20", rotation=90, ha="center", va="center", fontsize=7.5)
-    name = "babylm_prepretrain_ep20" + ("_lrfix" if lrfix else "")
+    name = "babylm_prepretrain_ep20"
     fig.savefig(os.path.join(OUT, name + ".png"))   # no tight bbox, keeps the margins
     print("saved", os.path.normpath(os.path.join(OUT, name + ".png")))
 
@@ -341,6 +339,4 @@ if __name__ == "__main__":
     style()
     for name in sys.argv[1:] or ["orderings", "nearfar"]:
         {"orderings": orderings, "nearfar": nearfar, "prepretrain": prepretrain, "epoch20": epoch20,
-         "sensitivity_kl": sensitivity_kl, "sl2_babylm_scatter": sl2_babylm_scatter,
-         "epoch20_lrfix": lambda: epoch20(lrfix=True), "long_training": long_training,
-         "sl2_babylm_scatter_lrfix": lambda: sl2_babylm_scatter("prepretrain/none_lrfix", "sl2_babylm_scatter_lrfix")}[name]()
+         "sensitivity_kl": sensitivity_kl, "sl2_babylm_scatter": sl2_babylm_scatter, "long_training": long_training}[name]()

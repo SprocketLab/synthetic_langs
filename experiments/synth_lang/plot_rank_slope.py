@@ -18,6 +18,7 @@ import paper_style as P
 _HERE = os.path.dirname(os.path.abspath(__file__))
 SYN = os.path.join(_HERE, "..", "..", "results", "synthetic")
 OUT = os.path.join(_HERE, "..", "..", "figures")
+os.makedirs(OUT, exist_ok=True)
 CONFIGS = ["pure_tf", "4s4t_alternate", "6s2t_start", "6s2t_even", "7s1t_mid", "pure_ssm",
            "pure_dp", "4d4t_alternate", "6d2t_start"]
 

@@ -170,10 +170,10 @@ python plot_round2_figs.py prepretrain epoch20
 python plot_paper_figs.py pipelines
 ```
 
-For pretraining, each initialisation is also trained at the other's learning rate
-(`pretrain_babylm.py --lr CONFIG=LR --results-dir ../../results/synthetic/prepretrain_lrswap`).
-`configs/stage2_manifest.json` lists, for each configuration, the BabyLM checkpoint with the lower
-perplexity, which the last stage starts from.
+The last stage starts from the BabyLM checkpoints listed in `configs/stage2_manifest.json`. For
+these runs each initialisation was also trained at the other's learning rate
+(`pretrain_babylm.py --lr CONFIG=LR --results-dir ../../results/synthetic/prepretrain_lrswap`), and
+the manifest keeps the run with the lower BabyLM perplexity.
 
 ### Appendix: full attention
 
