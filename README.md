@@ -1,6 +1,6 @@
-# Lightweight Experimentation with Nested Markov Chains
+# Synthetic Languages as a Testbed for Lightweight Language Model Design
 
-Official code for the paper *Lightweight Experimentation with Nested Markov Chains*.
+Official code for the paper *Synthetic Languages as a Testbed for Lightweight Language Model Design*.
 
 [Paper (coming soon)]() | [Citation](#citation)
 
@@ -219,7 +219,7 @@ configs/
 
 ```bibtex
 @misc{synthetic_langs,
-  title  = {Lightweight Experimentation with Nested Markov Chains},
+  title  = {Synthetic Languages as a Testbed for Lightweight Language Model Design},
   note   = {Citation will be added after publication},
 }
 ```
